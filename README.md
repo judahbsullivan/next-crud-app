@@ -1,8 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# next-crud-app
 
-## Getting Started
+Say hello to your cheerful Next.js playground! This app comes packed with delightful little features—Todos, Weather, and Notes—plus some smooth animations to keep things snappy. Buckle up; ship happens fast around here.
 
-First, run the development server:
+## Quickstart (a.k.a. the fun button)
+
+Pick your favorite package manager and launch the dev server:
 
 ```bash
 npm run dev
@@ -14,24 +16,57 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then visit `http://localhost:3000` and bask in the glow of a freshly running app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Want everything at once? You can run the web and API together:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev:both
+```
 
-## Learn More
+Notes:
+- This uses `concurrently` under the hood.
+- The combined script internally calls `bun run dev:web`. If you don't have Bun, you can run the two parts separately:
+  - Web: `npm run dev:web`
+  - API: `bash backend/run.sh`
 
-To learn more about Next.js, take a look at the following resources:
+## Features (with sprinkles)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Todos: wrangle your tasks, strike them out, feel powerful.
+- Weather: check conditions so you know if your hoodie is overkill.
+- Notes: jot thoughts before they vanish into the void.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project scripts
 
-## Deploy on Vercel
+```bash
+npm run dev        # Start the Next.js dev server
+npm run build      # Build the app
+npm run start      # Start the production server
+npm run lint       # Lint the codebase
+npm run dev:web    # Web-only dev server
+npm run dev:api    # Start the backend API (bash backend/run.sh)
+npm run dev:both   # Web + API together (requires Bun)
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Peek inside
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# next-crud-app
+- `src/app/page.tsx`: the friendly home base (with animated bits)
+- `backend/`: API runner script lives here (`run.sh`)
+- `public/`: static assets
+
+## Requirements (keep it simple)
+
+- Node.js (LTS recommended)
+- One of: npm, yarn, pnpm, or Bun
+
+## Deploy
+
+Deploy wherever you like—Vercel makes Next.js deployments wonderfully chill. Once you `npm run build`, you're good to go.
+
+## Contributing
+
+Found a typo? Have a brilliant idea? PRs welcome. Bonus points for playful commit messages.
+
+---
+
+Made with Next.js and good vibes. ✨
